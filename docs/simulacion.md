@@ -122,5 +122,42 @@ Una vez completada la síntesis inicial, es necesario mapear los flip-flops y co
 Estos pasos permiten que los flip-flops se asignen correctamente a las celdas disponibles y que el netlist sea optimizado en función de la librería seleccionada. Después de ejecutar ambos comandos, el diseño debe quedar completamente mapeado a las celdas estándar del PDK, mostrando en la salida de Yosys que los flip-flops fueron reemplazados por equivalentes de la librería y que la lógica combinacional fue optimizada con éxito.  
 
  # 3️⃣ Simulación funcional post-síntesis
-
+Después de sintetizar nuestro diseño RTL con Yosys y obtener el netlist (`femto_sky.v`), es importante verificar que el comportamiento funcional se mantiene. Esta simulación post-síntesis se realiza a nivel de celdas estándar de la librería Sky130, lo que nos permite observar el diseño ya mapeado a compuertas lógicas y flip-flops reales.
+ ### Comandos utilizados:
  
+ ```bash
+# 1. Síntesis con Yosys y copia del netlist
+yosys -c scripts/yosys/synth.tcl
+cp out.v femto_sky.v
+
+# 2. Compilación con Icarus Verilog
+iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 \
+  -o femto_sky_tb.vpp \
+  femto_sky.v \
+  /home/jdbarrer/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v \
+  /home/jdbarrer/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/verilog/primitives.v \
+  ~/Escritorio/temas/VLSI/femtoRV/cores/sim_spi_flash/spiflash.v \
+  ~/Escritorio/temas/VLSI/femtoRV/cores/sim_spi_ram/spiram.v \
+  ~/Escritorio/temas/VLSI/femtoRV/femto_TB.v
+
+# 3. Ejecución de la simulación
+vvp femto_sky_tb.vpp
+
+# 4. Visualización de ondas en GTKWave
+gtkwave femto_TB.vcd &
+```
+<p align="center">
+  <img src="cmdpost.png" alt="yosyspost1" width="500"/>
+</p>
+
+<p align="center"><em>Figura 4. Salida esperada del bash, para la simulación post síntesis.</em></p>
+
+Cada paso del flujo tiene un propósito específico: primero Yosys genera el netlist sintetizado (femto_sky.v) con celdas de la librería Sky130, luego Icarus Verilog compila ese netlist junto con los modelos funcionales (sky130_fd_sc_hd.v, primitives.v), los módulos de memoria simulada (spiflash.v, spiram.v) y tu banco de pruebas (femto_TB.v), después vvp ejecuta la simulación y finalmente GTKWave permite visualizar las señales en un archivo .vcd. La diferencia con la primera simulación que hicimos al comienzo es que allí trabajábamos directamente con el RTL, donde las señales y módulos eran más legibles y cercanos al código original, mientras que en la simulación post-síntesis se observa el diseño ya mapeado a compuertas lógicas y flip-flops de la librería, con nombres distintos y más detallados, lo que permite verificar que el comportamiento funcional se conserva tras la síntesis.
+
+A continuación, se muestra una imagen de como cambian los nombres y las señales mapeadas en GTKWave:
+
+<p align="center">
+  <img src="gtkpost.png" alt="yosys2" width="500"/>
+</p>
+
+<p align="center"><em>Figura 5. Visualización de las señales de las celdas en GTKWave.</em></p>
