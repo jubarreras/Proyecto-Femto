@@ -35,6 +35,5 @@ Posterior a esto, se realiza la ejecución de la simulación, con:
 ```bash
 vvp sim_femto.vpp
 ```
-
 - Corre el binario generado por Icarus Verilog.
-- Produce la salida de simulación y el archivo de ondas (femto_TB.vcd).
+- Produce la salida de simulación y el archivo de ondas (`femto_TB.vcd`).
