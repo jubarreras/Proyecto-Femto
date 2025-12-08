@@ -1,5 +1,5 @@
 # Simulación  
-## Generación de VCD y visualización (Icarus Verilog y GTKWave)
+## 1️⃣ Generación de VCD y visualización (Icarus Verilog y GTKWave)
 
 ### Introducción
 El propósito de esta primera simulación es verificar la correcta integración de los módulos del procesador **FemtoRV** junto con sus periféricos y memorias, generando un archivo de ondas (`.vcd`) que nos permita observar el comportamiento de las señales internas.  
@@ -31,3 +31,10 @@ iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 \
   - Memorias: `MappedSPIRAM.v`, `MappedSPIFlash.v`  
   - Modelos de prueba: `spiflash.v`, `spiram.v`
 
+Posterior a esto, se realiza la ejecución de la simulación, con:
+```bash
+vvp sim_femto.vpp
+```
+
+- Corre el binario generado por Icarus Verilog.
+- Produce la salida de simulación y el archivo de ondas (femto_TB.vcd).
