@@ -48,7 +48,7 @@ gtkwave femto_TB.vcd &
 #### Visualización de señales del archivo .vcd generado:
 
 <p align="center">
-  <img src="images/gtkwave.png" alt="sim gtkwave" width="400"/>
+  <img src="gtkwave.png" alt="sim gtkwave" width="400"/>
 </p>
 
 <p align="center"><em>Figura 1. Visaulización de señales en GTKWave</em></p>
