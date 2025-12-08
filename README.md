@@ -1,4 +1,4 @@
-# Femto RISC-V 32 en Tiny Tapeout
+# Femto RISC-V 32
 
 ## 📖 Introducción
 <!-- Breve explicación del propósito del proyecto, motivación y objetivos -->
