@@ -120,3 +120,7 @@ Una vez completada la síntesis inicial, es necesario mapear los flip-flops y co
 - `abc -liberty /home/jdbarrer/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib`  
 
 Estos pasos permiten que los flip-flops se asignen correctamente a las celdas disponibles y que el netlist sea optimizado en función de la librería seleccionada. Después de ejecutar ambos comandos, el diseño debe quedar completamente mapeado a las celdas estándar del PDK, mostrando en la salida de Yosys que los flip-flops fueron reemplazados por equivalentes de la librería y que la lógica combinacional fue optimizada con éxito.  
+
+ # 3️⃣ Simulación funcional post-síntesis
+
+ 
