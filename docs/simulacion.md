@@ -80,3 +80,32 @@ Si estas condiciones se cumplen y las señales muestran la actividad esperada, e
 ## Síntesis con Yosys y Verificación
 
 La síntesis es el proceso mediante el cual el código RTL en Verilog se transforma en una representación lógica optimizada, lista para ser mapeada a celdas estándar del PDK. En este flujo utilizamos **Yosys** como herramienta principal, que permite analizar el diseño, generar netlists intermedios y aplicar optimizaciones.    
+
+### Comandos utilizados:
+Primero se abre Yosys:
+
+```bash
+yosys
+```
+Posterior, se verifica que Yosys reconozca, los archivos .v:
+
+```bash
+read_verilog femto.v
+```
+Una vez verificada esta lectura, se procede a realizar la síntesis:
+
+```bash
+synth -top femto
+```
+Despues de recibir el mensaje de confirmación de que todo salió bien (Como se muestra en la imagen a continuación):
+<p align="center">
+  <img src="checkyosys.png" alt="yosys1" width="500"/>
+</p>
+
+<p align="center"><em>Figura 2. Salida exitosa de la síntesis en Yosys. </em></p>
+Se puede ver con el comando `stat`, la configuración o resumen de la síntesis, tal como se muestra, en la siguiente imagen:
+<p align="center">
+  <img src="resumenyosys.png" alt="yosys2" width="500"/>
+</p>
+
+<p align="center"><em>Figura 3. Resumen de la síntesis en Yosys</em></p>
