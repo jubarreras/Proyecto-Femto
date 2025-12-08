@@ -1,5 +1,5 @@
-# Simulación  
-## 1️⃣ Generación de VCD y visualización (Icarus Verilog y GTKWave)
+# 1️⃣ Simulación  
+## Generación de VCD y visualización (Icarus Verilog y GTKWave)
 
 ### Introducción
 El propósito de esta primera simulación es verificar la correcta integración de los módulos del procesador **FemtoRV** junto con sus periféricos y memorias, generando un archivo de ondas (`.vcd`) que nos permita observar el comportamiento de las señales internas.  
@@ -73,3 +73,10 @@ Para validar el correcto funcionamiento antes de la síntesis, se deben comproba
 4. Los resultados observados coinciden con los esperados del programa de prueba.  
 
 Si estas condiciones se cumplen y las señales muestran la actividad esperada, el procesador está listo para la etapa de síntesis en hardware.
+
+--- 
+
+#  2️⃣ Síntesis 
+## Síntesis con Yosys y Verificación
+
+La síntesis es el proceso mediante el cual el código RTL en Verilog se transforma en una representación lógica optimizada, lista para ser mapeada a celdas estándar del PDK. En este flujo utilizamos **Yosys** como herramienta principal, que permite analizar el diseño, generar netlists intermedios y aplicar optimizaciones.    
