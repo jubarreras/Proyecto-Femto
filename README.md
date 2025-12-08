@@ -1,2 +1,26 @@
-# Proyecto-Femto
-Repositorio dedicado al desarrollo, simulación, síntesis y diseño en **Tiny Tapeout** de un procesador **Femto RISC-V 32 bits**. Incluye módulos en Verilog, testbenches, scripts de automatización y flujos completos para llevar el núcleo desde la descripción RTL hasta su implementación en silicio.
+# Femto RISC-V 32 en Tiny Tapeout
+
+## 📖 Introducción
+<!-- Breve explicación del propósito del proyecto, motivación y objetivos -->
+
+## 🛠️ Herramientas y Prerrequisitos
+<!-- Lista de herramientas necesarias: Verilog, Yosys, Verilator, ngspice, GTKWave, Tiny Tapeout, etc. -->
+
+## ⚙️ Desarrollo
+<!-- Explicación del flujo de trabajo, organización del código y metodología -->
+
+## 🔩 Descripción de Hardware
+<!-- Detalles del procesador Femto RISC-V 32: arquitectura, módulos principales, puertos, etc. -->
+
+## 🧪 Síntesis, Simulación y Visualización
+<!-- Cómo sintetizar el diseño con Yosys/ABC, simular con Verilator/ngspice y visualizar señales en GTKWave -->
+
+## 🏗️ Implementación
+<!-- Proceso de integración del diseño en el flujo de Tiny Tapeout -->
+
+## 🖇️ Diseño en Tiny Tapeout
+<!-- Explicación del flujo específico de Tiny Tapeout: constraints, integración, envío del diseño -->
+
+## 📌 Conclusiones
+<!-- Reflexiones finales, aprendizajes y próximos pasos -->
+
