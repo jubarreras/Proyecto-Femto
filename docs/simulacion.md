@@ -113,3 +113,11 @@ Para ver el resumen del diseño se usa el comando `stat`, el cual muestra el nú
 <p align="center"><em>Figura 3. Resumen de la síntesis en Yosys</em></p>
 
 En la anterior imagen se muestra una sección del reporte de síntesis generado por Yosys para el diseño de un procesador FemtoRV y sus módulos auxiliares. Este resumen enumera la cantidad de recursos lógicos utilizados por cada módulo, como wires (cables), ports (puertos), y cells (celdas lógicas). Por ejemplo, para el módulo MappedSPIRAM se detallan los recursos internos necesarios para la implementación de la memoria RAM conectada vía SPI, listando específicamente la cantidad de operadores lógicos, flip-flops y multiplexores utilizados. De manera similar, el módulo principal femto muestra sus propios recursos y, además, sus submódulos relacionados, como el núcleo FemtoRV32 y periféricos de comunicación.
+
+Una vez completada la síntesis inicial, es necesario mapear los flip-flops y compuertas lógicas hacia las celdas estándar del PDK. Para eso se utilizan los siguientes comandos, que vinculan el diseño con la librería **sky130_fd_sc_hd**:
+
+- `dfflibmap -liberty /home/jdbarrer/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib`  
+- `abc -liberty /home/jdbarrer/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib`  
+
+Estos pasos permiten que los flip-flops se asignen correctamente a las celdas disponibles y que el netlist sea optimizado en función de la librería seleccionada.  
+Después de ejecutar ambos comandos, el diseño debe quedar completamente mapeado a las celdas estándar del PDK, mostrando en la salida de Yosys que los flip-flops fueron reemplazados por equivalentes de la librería y que la lógica combinacional fue optimizada con éxito.  
