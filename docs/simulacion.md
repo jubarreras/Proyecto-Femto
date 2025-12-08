@@ -103,7 +103,7 @@ Despues de recibir el mensaje de confirmación de que todo salió bien (Como se 
 </p>
 
 <p align="center"><em>Figura 2. Salida exitosa de la síntesis en Yosys. </em></p>
-Se puede ver con el comando `stat`, la configuración o resumen de la síntesis, tal como se muestra, en la siguiente imagen:
+Se puede ver con el comando `stat` , la configuración o resumen de la síntesis, tal como se muestra, en la siguiente imagen:
 <p align="center">
   <img src="resumenyosys.png" alt="yosys2" width="500"/>
 </p>
