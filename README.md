@@ -4,7 +4,7 @@
 En este informe se presenta el diseño y análisis de un procesador basado en la arquitectura RISC-V, tomando como modelo base la familia FemtoRV. El diseño modular y bien documentado del FemtoRV ofrece una visión clara de las etapas involucradas en el procesamiento de instrucciones y la manipulación de datos, elementos esenciales para comprender y desarrollar procesadores modernos y eficientes, por medio de diversas herramientas de software se mostrará cómo se sintetiza, simula y valida el funcionamiento del procesador, permitiendo observar de manera práctica el flujo completo de diseño digital. La base conceptual y arquitectónica del proyecto se apoya en la imagen que se muestra a continuación, la cual servirá como referencia para entender la organización interna del núcleo.
 
 <p align="center">
-  <img src="Images/Estrutucura_base.png" alt="Estructura FemtoRV" width="400"/>
+  <img src="images/Estrutucura_base.png" alt="Estructura FemtoRV" width="400"/>
 </p>
 
 <p align="center"><em>Figura 1. Arquitectura base del procesador FemtoRV</em></p>
