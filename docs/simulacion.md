@@ -121,6 +121,8 @@ Una vez completada la síntesis inicial, es necesario mapear los flip-flops y co
 
 Estos pasos permiten que los flip-flops se asignen correctamente a las celdas disponibles y que el netlist sea optimizado en función de la librería seleccionada. Después de ejecutar ambos comandos, el diseño debe quedar completamente mapeado a las celdas estándar del PDK, mostrando en la salida de Yosys que los flip-flops fueron reemplazados por equivalentes de la librería y que la lógica combinacional fue optimizada con éxito.  
 
+---
+
  # 3️⃣ Simulación funcional post-síntesis
 Después de sintetizar nuestro diseño RTL con Yosys y obtener el netlist (`femto_sky.v`), es importante verificar que el comportamiento funcional se mantiene. Esta simulación post-síntesis se realiza a nivel de celdas estándar de la librería Sky130, lo que nos permite observar el diseño ya mapeado a compuertas lógicas y flip-flops reales.
  ### Comandos utilizados:
