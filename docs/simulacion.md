@@ -64,12 +64,12 @@ Las señales clave incluyen:
 - **`mem_address[31:0]`** y **`mem_rdata[31:0]`** →  Dirección y datos de lectura en la memoria principal.  
 - **`mem_wdata[31:0]`** y **`mem_wmask[3:0]`** →  Datos y máscara para escritura en memoria.  
 - **`mapped_spi_flash_rbusy`** →  Estado de ocupación de la memoria flash SPI.  
----
+
 Para validar el correcto funcionamiento antes de la síntesis, se deben comprobar los siguientes puntos:
 
 1. El reloj oscila correctamente y el reset solo se activa al inicio.  
 2. Existe actividad coherente en las señales de SPI y de memoria durante los accesos.  
 3. Las direcciones y datos de memoria cambian conforme se ejecutan las instrucciones, sin valores indeterminados.  
 4. Los resultados observados coinciden con los esperados del programa de prueba.  
----
+
 Si estas condiciones se cumplen y las señales muestran la actividad esperada, el procesador está listo para la etapa de síntesis en hardware.
