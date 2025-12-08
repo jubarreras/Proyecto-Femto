@@ -58,19 +58,18 @@ En la imagen se observa la simulación utilizando *GTKWave*. Las señales listad
 
 Las señales clave incluyen:
 
-- **`clk`**: Señal de reloj que sincroniza todas las operaciones del procesador.  
-- **`resetn`**: Señal de reset activa en bajo, utilizada para inicializar el sistema.  
-- **`spi_clk, spi_cs_n, spi_mosi, spi_miso`**: Señales asociadas a la comunicación SPI, usadas para conectar memorias externas (como flash y RAM SPI). “spi_clk” es el reloj SPI, “spi_cs_n” es la señal de chip select (“n” indica activo en bajo), “spi_mosi” y “spi_miso” son las líneas de datos para envío y recepción respectivamente.
-- **`TXD, RXD`**: Líneas de transmisión y recepción serial UART, relevantes para la comunicación externa del sistema.
-- **`PC`**: Contador de programa, que indica la dirección de la instrucción que está ejecutando la CPU en cada ciclo.
-- **`RAM_MEM, RAM_rdata`**: Señales que muestran el contenido de la memoria RAM utilizada por el procesador.
-- **`registerFile`**: Muestra el contenido de los registros internos, en este caso el grupo de 32 registros de propósito general típicos de arquitecturas RISC-V.
+- **`clk`** y **`resetn`** →  Reloj principal y señal de reset del sistema.  
+- **`spi_clk`, `spi_cs_n`, `spi_mosi`, `spi_miso`** → Interfaz SPI utilizada para la comunicación con memorias externas.  
+- **`cs[6:0]`** →  Líneas de selección de chip para identificar dispositivos conectados.  
+- **`mem_address[31:0]`** y **`mem_rdata[31:0]`** →  Dirección y datos de lectura en la memoria principal.  
+- **`mem_wdata[31:0]`** y **`mem_wmask[3:0]`** →  Datos y máscara para escritura en memoria.  
+- **`mapped_spi_flash_rbusy`** →  Estado de ocupación de la memoria flash SPI.  
+---
+Para validar el correcto funcionamiento antes de la síntesis, se deben comprobar los siguientes puntos:
 
-Para comprobar que el procesador está funcionando correctamente durante esta simulación y antes de proceder con la síntesis física, se debe observar varios aspectos:
-1. *Integridad de señales*: El reloj (clk) debe oscilar correctamente, y el reset solo debe estar activo al inicio.
-2. *Ejecución secuencial*: El PC debe incrementar coherentemente, lo cual indica que las instrucciones están siendo ejecutadas en secuencia o según saltos programados.
-3. *Transferencia de datos*: Las señales relacionadas con carga/almacenamiento en memoria y comunicación por SPI/UART deben mostrar actividad conforme a las instrucciones del programa cargado.
-4. *Cambios en los registros*: Los valores de los registros internos y posiciones de memoria deben modificarse acorde a los resultados esperados de las instrucciones, permitiendo validar operaciones aritméticas, lógicas y de control de flujo.
-5. *Resultados esperados*: Comparar la evolución de señales y salidas con los resultados esperados del programa de prueba (testbench), asegurando que no existan estados indeseados como valores indefinidos (X) o inactividad donde no corresponde.
-
-Si todas las señales muestran un comportamiento coherente y esperado de acuerdo con la especificación funcional del procesador, se puede concluir que la simulación es exitosa y que el diseño está listo para pasar a la etapa de síntesis para implementación en hardware físico.
+1. El reloj oscila correctamente y el reset solo se activa al inicio.  
+2. Existe actividad coherente en las señales de SPI y de memoria durante los accesos.  
+3. Las direcciones y datos de memoria cambian conforme se ejecutan las instrucciones, sin valores indeterminados.  
+4. Los resultados observados coinciden con los esperados del programa de prueba.  
+---
+Si estas condiciones se cumplen y las señales muestran la actividad esperada, el procesador está listo para la etapa de síntesis en hardware.
