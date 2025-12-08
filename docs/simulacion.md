@@ -18,7 +18,7 @@ iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 \
   OpenLane/src/*.v \
   cores/sim_spi_flash/spiflash.v \
   cores/sim_spi_ram/spiram.v
-
+```
 
 - **`-DFUNCTIONAL`** → Usa modelos funcionales de librerías.  
 - **`-DUNIT_DELAY=#1`** → Asigna un retardo unitario a las compuertas.  
