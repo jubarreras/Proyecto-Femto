@@ -46,6 +46,7 @@ gtkwave femto_TB.vcd &
 - Permite inspeccionar gráficamente las señales del diseño.
 - El `&` lo ejecuta en segundo plano para no bloquear la terminal.
 #### Visualización de señales del archivo .vcd generado:
+![Señales en GTKWave](images/gtkwave.png)
 
 
 En la imagen se observa la simulación utilizando *GTKWave*. Las señales listadas corresponden a diferentes módulos y buses de comunicación del procesador FemtoRV y su entorno de pruebas (testbench).
