@@ -147,7 +147,7 @@ vvp femto_sky_tb.vpp
 gtkwave femto_TB.vcd &
 ```
 <p align="center">
-  <img src="cmdpost.png" alt="yosyspost1" width="500"/>
+  <img src="cmdpost.png" alt="yosyspost1" width="900"/>
 </p>
 
 <p align="center"><em>Figura 4. Salida esperada del bash, para la simulación post síntesis.</em></p>
@@ -157,7 +157,7 @@ Cada paso del flujo tiene un propósito específico: primero Yosys genera el net
 A continuación, se muestra una imagen de como cambian los nombres y las señales mapeadas en GTKWave:
 
 <p align="center">
-  <img src="gtkpost.png" alt="yosys2" width="500"/>
+  <img src="gtkpost.png" alt="yosys2" width="950"/>
 </p>
 
 <p align="center"><em>Figura 5. Visualización de las señales de las celdas en GTKWave.</em></p>
