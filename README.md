@@ -14,7 +14,40 @@ En este informe se presenta el diseño y análisis de un procesador basado en la
 El procesador FemtoRV se distingue por su simplicidad y eficiencia. En su variante más elemental, denominada FemtoRV-quark, implementa el conjunto de instrucciones RV32I utilizando únicamente unas 400 líneas de código Verilog, lo que facilita su estudio, despliegue y personalización, convirtiéndolo en un excelente punto de partida para este proyecto.
 
 ## 🛠️ Herramientas y Prerrequisitos
-<!-- Lista de herramientas necesarias: Verilog, Yosys, Verilator, ngspice, GTKWave, Tiny Tapeout, etc. -->
+El desarrollo y la implementación de un procesador requieren un conjunto de herramientas de software que cubren todo el flujo de diseño digital: desde la síntesis lógica y la simulación funcional, hasta la visualización de señales y la generación del layout físico. A continuación se presentan las principales utilidades empleadas en este proyecto, junto con sus funciones y enlaces oficiales para instalación y documentación.
+
+- **Yosys**  
+  Herramienta de síntesis lógica para convertir diseños en Verilog a netlists optimizadas. Permite aplicar transformaciones, verificar consistencia y preparar el diseño para flujos posteriores de implementación.  
+  [Repositorio oficial](https://github.com/YosysHQ/yosys)
+
+- **Icarus Verilog**  
+  Compilador y simulador de Verilog que facilita la verificación funcional de módulos digitales. Es ampliamente usado en entornos educativos y de investigación por su simplicidad y compatibilidad con estándares.  
+  [Repositorio oficial](https://github.com/steveicarus/iverilog)
+
+- **GTKWave**  
+  Visualizador de formas de onda que permite inspeccionar señales generadas en simulaciones. Es esencial para depurar y analizar el comportamiento temporal de los circuitos digitales.  
+  [Repositorio oficial](https://github.com/gtkwave/gtkwave)
+
+- **ngspice**  
+  Simulador de circuitos analógicos y mixtos basado en SPICE. Permite integrar modelos digitales con analógicos, lo que resulta útil en co-simulación y validación de sistemas mixtos.  
+  [Repositorio oficial](https://github.com/imr/ngspice)
+
+- **OpenSTA**  
+  Herramienta de análisis estático de temporización (Static Timing Analysis). Verifica que el diseño cumpla con las restricciones de tiempo y asegura la correcta operación a la frecuencia objetivo.  
+  [Repositorio oficial](https://github.com/The-OpenROAD-Project/OpenSTA)
+
+- **Magic**  
+  Editor y verificador de layouts VLSI. Permite visualizar, modificar y comprobar reglas de diseño físico, siendo una pieza clave en el flujo de implementación de ASICs.  
+  [Repositorio oficial](https://github.com/RTimothyEdwards/magic)
+
+- **OpenLane**  
+  Flujo automatizado de diseño físico que integra múltiples herramientas (Yosys, OpenROAD, Magic, etc.) para llevar un diseño desde RTL hasta GDSII. Es la base de muchos proyectos de fabricación abierta.  
+  [Repositorio oficial](https://github.com/The-OpenROAD-Project/OpenLane)
+
+- **TinyTapeout Build System**  
+  Infraestructura de construcción y automatización para enviar diseños al flujo de fabricación de TinyTapeout. Permite integrar proyectos en el ecosistema colaborativo y generar los artefactos necesarios para tapeout.  
+  [Repositorio oficial](https://github.com/TinyTapeout/tt-support-tools)
+
 
 ## ⚙️ Desarrollo
 <!-- Explicación del flujo de trabajo, organización del código y metodología -->
