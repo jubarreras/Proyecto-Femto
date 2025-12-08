@@ -9,7 +9,7 @@ En este informe se presenta el diseño y análisis de un procesador basado en la
 
 <p align="center"><em>Figura 1. Arquitectura base del procesador FemtoRV</em></p>
 
-
+En la imagen presentada del diagrama de bloques del procesador RV32I se pueden identificar varios módulos principales, cada uno con una función específica. La Unidad de Comunicaciones (ubicada a la izquierda) se encarga de las transferencias de datos entre el procesador y la memoria, gestionando operaciones de carga y almacenamiento (load/store) para diferentes tamaños de dato. El módulo central, que incluye registros como rs1, rs2 y el registro de destino (dest_reg), administra la ejecución de instrucciones aritméticas y lógicas, así como el flujo de datos internos. La ALU (Unidad Aritmético-Lógica) realiza operaciones matemáticas y lógicas de acuerdo con las instrucciones del programa, mientras que otros componentes, como el PC (Program Counter), controlan la secuencia de ejecución de instrucciones, incrementando su valor según el tipo de operación realizada (salto, llamada, instrucción secuencial, etc.).
 
 El procesador FemtoRV se distingue por su simplicidad y eficiencia. En su variante más elemental, denominada FemtoRV-quark, implementa el conjunto de instrucciones RV32I utilizando únicamente unas 400 líneas de código Verilog, lo que facilita su estudio, despliegue y personalización, convirtiéndolo en un excelente punto de partida para este proyecto.
 
