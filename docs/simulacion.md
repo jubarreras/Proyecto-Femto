@@ -111,3 +111,5 @@ Para ver el resumen del diseño se usa el comando `stat`, el cual muestra el nú
 </p>
 
 <p align="center"><em>Figura 3. Resumen de la síntesis en Yosys</em></p>
+
+En la anterior imagen se muestra una sección del reporte de síntesis generado por Yosys para el diseño de un procesador FemtoRV y sus módulos auxiliares. Este resumen enumera la cantidad de recursos lógicos utilizados por cada módulo, como wires (cables), ports (puertos), y cells (celdas lógicas). Por ejemplo, para el módulo MappedSPIRAM se detallan los recursos internos necesarios para la implementación de la memoria RAM conectada vía SPI, listando específicamente la cantidad de operadores lógicos, flip-flops y multiplexores utilizados. De manera similar, el módulo principal femto muestra sus propios recursos y, además, sus submódulos relacionados, como el núcleo FemtoRV32 y periféricos de comunicación.
