@@ -37,3 +37,11 @@ vvp sim_femto.vpp
 ```
 - Corre el binario generado por Icarus Verilog.
 - Produce la salida de simulación y el archivo de ondas (`femto_TB.vcd`).
+
+Por ultimo, con este comando se realiza la visualización de señales en GTKWave:
+```bash
+gtkwave femto_TB.vcd &
+```
+- Abre el archivo de ondas en GTKWave.
+- Permite inspeccionar gráficamente las señales del diseño.
+- El `&` lo ejecuta en segundo plano para no bloquear la terminal.
