@@ -41,6 +41,14 @@ A continuación se detallan las partes más importantes del módulo:
 
 ### Submódulo `FemtoRV32 CPU`
 
+Es el **núcleo del procesador RISC-V**.  
+Funciones principales:
+- Generar direcciones de memoria (`mem_addr`).  
+- Emitir datos de escritura (`mem_wdata`) y recibir datos de lectura (`mem_rdata`).  
+- Coordinar operaciones de lectura/escritura mediante `mem_rstrb` y `mem_wmask`.  
+- Controlar el flujo de ejecución del programa cargado en memoria.
+
+
 | Señal        | Dirección | Descripción                                                                 |
 |--------------|-----------|-----------------------------------------------------------------------------|
 | `clk`        | Input     | Reloj del sistema.                                                          |
@@ -57,6 +65,14 @@ A continuación se detallan las partes más importantes del módulo:
 
 ### Submódulo `MappedSPIRAM`
 
+Interfaz hacia la **memoria RAM externa vía SPI**.  
+Funciones principales:
+- Recibir direcciones y datos desde el CPU.  
+- Ejecutar operaciones de lectura/escritura en la RAM SPI.  
+- Reportar estados de ocupación (`rbusy`, `wbusy`).  
+- Proveer datos leídos (`rdata`) al bus del sistema.
+
+  
 | Señal        | Dirección | Descripción                                                                 |
 |--------------|-----------|-----------------------------------------------------------------------------|
 | `clk`        | Input     | Reloj del sistema.                                                          |
@@ -77,6 +93,14 @@ A continuación se detallan las partes más importantes del módulo:
 
 ### Submódulo `MappedSPIFlash`
 
+Interfaz hacia la **memoria Flash externa vía SPI**.  
+Funciones principales:
+- Atender solicitudes de lectura del CPU.  
+- Proveer datos almacenados en la Flash (`rdata`).  
+- Reportar estado de ocupación (`rbusy`).  
+- Facilitar acceso a programas o datos persistentes.
+
+
 | Señal        | Dirección | Descripción                                                                 |
 |--------------|-----------|-----------------------------------------------------------------------------|
 | `clk`        | Input     | Reloj del sistema.                                                          |
@@ -94,6 +118,14 @@ A continuación se detallan las partes más importantes del módulo:
 
 ### Submódulo `peripheral_uart`
 
+Periférico de comunicación serial **UART** y control de LEDs.  
+Funciones principales:
+- Transmitir (`TXD`) y recibir (`RXD`) datos seriales.  
+- Mapear registros internos accesibles por el CPU.  
+- Proveer datos recibidos (`d_out`) y aceptar datos a transmitir (`d_in`).  
+- Controlar la salida hacia LEDs (`ledout`) como indicador de actividad.
+
+
 | Señal        | Dirección | Descripción                                                                 |
 |--------------|-----------|-----------------------------------------------------------------------------|
 | `clk`        | Input     | Reloj del sistema.                                                          |
@@ -109,4 +141,9 @@ A continuación se detallan las partes más importantes del módulo:
 
 --- 
 
+Decodificador de direcciones que activa el periférico correspondiente:  
+- `0000` → RAM.  
+- `0040` → UART.  
+- `0001` → dpRAM.  
+Permite que el CPU acceda a distintos periféricos dentro de un espacio de direcciones unificado.  
 
