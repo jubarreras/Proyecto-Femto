@@ -229,6 +229,37 @@ Aunque Ngspice permite realizar la simulación, se optó por Xyce debido a las s
 - Escalabilidad: para módulos más complejos como el procesador Femto RISC-V, la simulación con Ngspice se vuelve poco viable.
 - Uso de máquina remota: se optó por ejecutar Xyce en una máquina remota con mayor capacidad de cómputo, garantizando estabilidad y evitando problemas de rendimiento en el equipo local.
 
-## 6️⃣ Extracción Magic
+## 6️⃣ Flujo con OpenLane y visualización con Magic
+
+OpenLane es un flujo automatizado de diseño físico (RTL-to-GDSII) que integra herramientas de síntesis, floorplan, placement, routing y verificación. Se eligió porque permite transformar la descripción en Verilog del chip en un layout físico completo, listo para fabricación en el proceso **SkyWater SKY130**. Su principal ventaja es que automatiza pasos complejos y genera reportes detallados de área, ruteo y timing.
+
+El flujo de OpenLane sirve para:
+- Convertir un diseño digital en Verilog a un **layout físico en GDSII**.  
+- Validar reglas de diseño y restricciones de temporización.  
+- Obtener estadísticas de utilización de celdas, ruteo y longitud de cableado.  
+- Generar artefactos intermedios (netlist sintetizado, DEFs) y finales (GDS, reportes).
+
+## Comandos utilizados para el diseño *Femto*:
+Una vez abierto el docker que contiene a Open Lane, y tener los archivos .v de todos los modulos que vamos a utilizar, se procede con los siguientes comandos: 
+```bash
+./flow.tcl -design femto -init_design_config -add_to_designs
+./flow.tcl -design femto -tag full_guide -overwrite
+```
+- El primer comando crea la configuración inicial (`config.tcl`) y registra el diseño en la carpeta `designs/.`
+- El segundo comando corre el flujo completo y guarda los resultados en `runs/femto/full_guide/`.
+
+<p align="center">
+  <img src="resultopenlane.png" alt="openl" width="800"/>
+</p>
+
+<p align="center"><em>Figura 6. Directorios generados despues de ejecutar el flujo en Open Lane.</em></p>
+
+Al finalizar, OpenLane generó:
+
+- Layout final en GDSII (femto.gds) → visualizable en Magic/KLayout.
+- Netlist sintetizado (femto.synthesis.v).
+- Archivos DEF intermedios de floorplan, placement y routing.
+- Reportes de síntesis y ruteo (No. compuertas logicas, Porc. utilización, long. cableado):
+- Logs detallados de cada etapa del flujo.
 
 ... (En redacción, todavia) ....
