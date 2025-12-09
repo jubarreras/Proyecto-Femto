@@ -147,3 +147,20 @@ Decodificador de direcciones que activa el periférico correspondiente:
 - `0001` → dpRAM.  
 Permite que el CPU acceda a distintos periféricos dentro de un espacio de direcciones unificado.  
 
+---
+
+## Multiplicador de 32 bits
+
+El módulo `mult_32` implementa la operación aritmética de multiplicación entre dos operandos de 32 bits. Su función principal es extender las capacidades del procesador **Femto RISC-V**, permitiendo ejecutar instrucciones que requieren productos enteros de mayor tamaño.
+
+### Características principales
+- **Entradas:** dos números de 32 bits (`A` y `B`).
+- **Salida:** resultado de 64 bits (`P`), ya que el producto de dos enteros de 32 bits puede superar el rango de 32 bits.
+- **Uso interno:** el procesador puede truncar o seleccionar las 32 bits menos significativas cuando solo se requiere un resultado reducido.
+- **Implementación:** puede realizarse de manera combinacional (un solo ciclo, más área) o secuencial (varios ciclos, menos área).
+
+### Relación con Femto RISC-V
+- El multiplicador se conecta como **unidad funcional** dentro de la ALU o como módulo independiente invocado por instrucciones específicas (`MUL`, `MULH`, etc. del conjunto RISC-V).
+- Permite ejecutar operaciones críticas en aplicaciones de cálculo intensivo, como algoritmos criptográficos, procesamiento digital de señales o cálculos matemáticos de alto rendimiento.
+- Su verificación aislada en simulación (como hiciste en Xyce) asegura que la descripción RTL sea correcta antes de integrarlo al flujo completo del procesador.
+
