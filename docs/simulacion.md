@@ -164,6 +164,8 @@ A continuación, se muestra una imagen de como cambian los nombres y las señale
 
 <p align="center"><em>Figura 5. Visualización de las señales de las celdas en GTKWave.</em></p>
 
+---
+
 ## 4️⃣ Simulación del Multiplicador de 32 bits en Xyce
 
 Para validar la correcta descripción del módulo de multiplicador de 32 bits, se realiza una simulación independiente utilizando **Xyce**, un simulador de circuitos SPICE orientado a alto rendimiento y paralelización.  
