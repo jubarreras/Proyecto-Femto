@@ -82,7 +82,7 @@ gtkwave femto_tb.vcd
 En esta sección se presentan las estadísticas generadas automáticamente por el flujo de TinyTapeout a partir del archivo GDS. Los resultados incluyen el **número de compuertas lógicas utilizadas**, el **porcentaje de utilización del ruteo** y el **largo total del cableado en micrómetros**. Estos datos se muestran en la siguiente imagen para ofrecer una visión clara del rendimiento y la complejidad física del diseño.
 
 <p align="center">
-  <img src="compuertastiny.png" alt="logic" width="600"/>
+  <img src="compuertastiny.png" alt="logic" width="900"/>
 </p>
 
 <p align="center"><em>Figura 1. Distribución de compuertas logicas según el diseño y sintesis de Tiny TapeOut para el Femto RV</em></p>
@@ -90,7 +90,7 @@ En esta sección se presentan las estadísticas generadas automáticamente por e
 La siguiente imagen corresponde al proceso de verificación automática que realiza TinyTapeout sobre el diseño en Verilog. Este chequeo confirma que la descripción del chip cumple con las reglas de síntesis y que no existen errores estructurales, garantizando que el flujo pueda continuar de manera confiable hacia la implementación física.
 
 <p align="center">
-  <img src="checktiny.png" alt="check tiny" width="600"/>
+  <img src="checktiny.png" alt="check tiny" width="400"/>
 </p>
 
 <p align="center"><em>Figura 2. Verificación correcta de los pasos para el Femto RV</em></p>
@@ -98,7 +98,7 @@ La siguiente imagen corresponde al proceso de verificación automática que real
 Y por ultimo se muestra la visualización del silicio final generada por TinyTapeout, donde se aprecia el layout en dos dimensiones y una representación tridimensional del chip. Esta vista permite comprender cómo se distribuyen las celdas y el ruteo en el área del circuito, ofreciendo una perspectiva clara del resultado físico que será fabricado.
 
 <p align="center">
-  <img src="layouttiny.png" alt="layout2d" width="600"/>
+  <img src="layouttiny.png" alt="layout2d" width="900"/>
 </p>
 
 <p align="center"><em>Figura 3. LayOut en 2D generado autmoaticamente desde Tiny Tapeout para el chip Femto RV</em></p>
