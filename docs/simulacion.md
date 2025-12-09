@@ -256,10 +256,28 @@ Una vez abierto el docker que contiene a Open Lane, y tener los archivos .v de t
 
 Al finalizar, OpenLane generó:
 
-- Layout final en GDSII (femto.gds) → visualizable en Magic/KLayout.
-- Netlist sintetizado (femto.synthesis.v).
-- Archivos DEF intermedios de floorplan, placement y routing.
-- Reportes de síntesis y ruteo (No. compuertas logicas, Porc. utilización, long. cableado):
-- Logs detallados de cada etapa del flujo.
+**`synthesis/`**
+- Contiene el netlist sintetizado en Verilog (*.v).
+
+**`floorplan/`**
+- Archivos DEF que muestran cómo se definió el área del chip, pines y bloques.
+
+**`placement/`**
+- DEF con la ubicación de cada celda estándar.
+- Relevante para visualizar cómo se acomodaron las compuertas en el área.
+
+**`cts/ (Clock Tree Synthesis)`**
+- Archivos DEF/Verilog con el árbol de reloj insertado.
+- Útil para validar que el reloj se distribuye correctamente.
+
+**`routing/`**
+- DEF con el ruteo de las señales.
+
+**`final/`**
+- El más importante: aquí está el layout final en GDSII (femto.gds).
+- Este archivo es el que se envía a fabricación.
+
+**`signoff/`**
+- Reportes de verificación final (DRC, LVS, timing).
 
 ... (En redacción, todavia) ....
