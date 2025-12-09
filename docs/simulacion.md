@@ -202,7 +202,3 @@ La función de los comandos anteriores es:
 ---
 
 ## 6️⃣ Extracción Magic
-
----
-
-## Conclusiones
