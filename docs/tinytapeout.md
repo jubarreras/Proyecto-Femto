@@ -104,9 +104,9 @@ Y por ultimo se muestra la visualización del silicio final generada por TinyTap
 <p align="center"><em>Figura 3. LayOut en 2D generado autmoaticamente desde Tiny Tapeout para el chip Femto RV</em></p>
 
 
+![Demo](demo.gif)
 
----
-
+<p align="center"><em>Figura 4. LayOut en 3D generado autmoaticamente desde Tiny Tapeout para el chip Femto RV</em></p>
 
 ## ✅ Resultado del Proyecto en Tiny Tapeout ✅
 
