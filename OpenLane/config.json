@@ -1,7 +1,0 @@
-{
-    "DESIGN_NAME": "femto",
-    "VERILOG_FILES": "dir::src/*.v",
-    "CLOCK_PORT": "clk",
-    "CLOCK_PERIOD": 20.0,
-    "FP_PDN_MULTILAYER": true
-}
