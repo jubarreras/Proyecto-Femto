@@ -13,7 +13,7 @@ En la imagen presentada del diagrama de bloques del procesador RV32I se pueden i
 
 El procesador FemtoRV se distingue por su simplicidad y eficiencia. En su variante más elemental, denominada FemtoRV-quark, implementa el conjunto de instrucciones RV32I utilizando únicamente unas 400 líneas de código Verilog, lo que facilita su estudio, despliegue y personalización, convirtiéndolo en un excelente punto de partida para este proyecto.
 
-## 🛠️ Herramientas y Prerrequisitos
+## Herramientas y Prerrequisitos
 El desarrollo y la implementación de un procesador requieren un conjunto de herramientas de software que cubren todo el flujo de diseño digital: desde la síntesis lógica y la simulación funcional, hasta la visualización de señales y la generación del layout físico. A continuación se presentan las principales utilidades empleadas en este proyecto, junto con sus funciones y enlaces oficiales para instalación y documentación.
 
 - **Yosys**  
@@ -56,7 +56,7 @@ El procesador Femto RISC-V 32 se basa en una arquitectura modular inspirada en l
 El flujo de diseño digital requiere validar el comportamiento del procesador mediante síntesis lógica, simulación funcional y análisis de señales. Aquí se describe cómo emplear herramientas como Yosys, Icarus Verilog, ngspice y GTKWave para comprobar la correcta operación del núcleo.  
 [Ver más detalles en `docs/simulacion.md`](docs/simulacion.md)
 
-## 🖇️ Diseño en Tiny Tapeout
+## Diseño en Tiny Tapeout
 Tiny Tapeout ofrece un entorno colaborativo para llevar diseños digitales a fabricación en silicio. En esta sección se explica cómo integrar el procesador Femto RISC-V 32 en el flujo de Tiny Tapeout, incluyendo restricciones, preparación de archivos y envío del diseño.  
 [Ver más detalles en `docs/tinytapeout.md`](docs/tinytapeout.md)
 
