@@ -50,15 +50,15 @@ El desarrollo y la implementación de un procesador requieren un conjunto de her
 
 ## 💡 Descripción de Hardware
 El procesador Femto RISC-V 32 se basa en una arquitectura modular inspirada en la familia FemtoRV. En esta sección se introduce la organización interna del núcleo, sus principales módulos y la forma en que interactúan para ejecutar el conjunto de instrucciones RV32I.  
-[Ver más detalles en `docs/hardware.md`](docs/hardware.md)
+✅[Ver más detalles en `docs/hardware.md`](docs/hardware.md)✅
 
 ## ⚙️ Síntesis, Simulación y Visualización
 El flujo de diseño digital requiere validar el comportamiento del procesador mediante síntesis lógica, simulación funcional y análisis de señales. Aquí se describe cómo emplear herramientas como Yosys, Icarus Verilog, ngspice y GTKWave para comprobar la correcta operación del núcleo.  
-[Ver más detalles en `docs/simulacion.md`](docs/simulacion.md)
+✅[Ver más detalles en `docs/simulacion.md`](docs/simulacion.md)✅
 
 ## 🔬 Diseño en Tiny Tapeout
 Tiny Tapeout ofrece un entorno colaborativo para llevar diseños digitales a fabricación en silicio. En esta sección se explica cómo integrar el procesador Femto RISC-V 32 en el flujo de Tiny Tapeout, incluyendo restricciones, preparación de archivos y envío del diseño.  
-[Ver más detalles en `docs/tinytapeout.md`](docs/tinytapeout.md)
+✅[Ver más detalles en `docs/tinytapeout.md`](docs/tinytapeout.md)✅
 
 
 ## Conclusiones
