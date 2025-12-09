@@ -163,3 +163,30 @@ A continuación, se muestra una imagen de como cambian los nombres y las señale
 </p>
 
 <p align="center"><em>Figura 5. Visualización de las señales de las celdas en GTKWave.</em></p>
+
+## 4️⃣ Simulación del Multiplicador de 32 bits en Xyce
+
+Para validar la correcta descripción del módulo de multiplicador de 32 bits, se realiza una simulación independiente utilizando **Xyce**, un simulador de circuitos SPICE orientado a alto rendimiento y paralelización.  
+
+El multiplicador es un bloque fundamental dentro del procesador **Femto RISC-V**, ya que permite ejecutar operaciones aritméticas de mayor complejidad. Antes de integrarlo completamente en el flujo del procesador, es recomendable comprobar su comportamiento de manera aislada para garantizar que la lógica esté bien definida y que las señales se propaguen correctamente.
+
+### Ejecución desde Bash
+
+En este caso se definen las siguientes variables de entorno:  
+- `TARGET=mult_32` → Nombre del módulo a simular (multiplicador de 32 bits).  
+- `TOP=mult_32` → Módulo principal de la simulación.  
+- `NPROC=4` → Número de procesos paralelos que se utilizarán para la ejecución con **MPI**.  
+
+Los comandos de ejecución son los siguientes:
+
+```bash
+mpirun -np ${NPROC} Xyce ${TARGET}_TB.cir
+python plot_${TARGET}.py
+```
+La función de los comandos anteriores es: 
+
+- `mpirun -np ${NPROC} Xyce ${TARGET}_TB.cir` → Lanza la simulación del testbench (mult_32_TB.cir) en Xyce, distribuyendo la carga en 4 procesos paralelos para acelerar el cálculo.
+
+- `python plot_${TARGET}.py`→ Ejecuta el script de post-procesamiento que genera las gráficas de salida, permitiendo visualizar las señales y confirmar que el multiplicador responde correctamente a los estímulos definidos en el testbench.
+
+- ✅ Resultado esperado: Tras ejecutar estos comandos, se debe obtener la simulación completa del multiplicador de 32 bits, junto con las gráficas que muestran su comportamiento. Esto confirma que la descripción del módulo es correcta y que puede integrarse de manera confiable en el procesador Femto RISC-V, tal y como se muestra a continuación:
