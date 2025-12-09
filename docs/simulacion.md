@@ -213,7 +213,7 @@ SIM_OBJS_SKY += ../verilog_model/primitives.v
 # Comandos de simulación
 ngspice ${TARGET}.spice
 python plot_${TARGET}.py
-
+```
 Explicación
 - **`TARGET / TOP`**: definen el módulo principal a simular (mult_32).
 - **`OBJS / PER_OBJS`**: incluyen los archivos Verilog del multiplicador y periféricos asociados.
