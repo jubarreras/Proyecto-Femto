@@ -280,4 +280,24 @@ Al finalizar, OpenLane generó:
 **`signoff/`**
 - Reportes de verificación final (DRC, LVS, timing).
 
-... (En redacción, todavia) ....
+Para visualizar el layout final del archivo final .gds que es el resultado mas importante de todo lo obtenido, ejecutamos el siguiente comando, donde establecemos la ruta de nuestro sky130a y el archivo .gds, en este caso el comando queda, de la siguiente forma: 
+```bash
+magic -T /home/jdbarrer/.volare/volare/sky130/build/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/magic/sky130A.tech \
+      ~/OpenLane/designs/femto/runs/full_guide/results/final/gds/femto.gds &
+```
+-T sky130A.tech → carga el archivo de tecnología del PDK Sky130A.
+- femto.gds → layout final del diseño.
+- El símbolo & permite que Magic se ejecute en segundo plano.
+
+<p align="center">
+  <img src="layoutfinal.png" alt="magic" width="800"/>
+</p>
+
+<p align="center"><em>Figura 7. Layout Final visualizado con Magic y generado con OpenLane.</em></p>
+
+Al abrir el GDS en Magic se puede observar:
+- Distribución de celdas estándar en el área del chip.
+- Capas metálicas utilizadas para interconexiones.
+- Pines de entrada/salida ubicados en el perímetro.
+- Árbol de reloj y ruteo final, mostrando cómo se conectan las señales.
+- Validación visual de que el diseño cumple con las reglas de manufactura (DRC).
