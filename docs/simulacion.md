@@ -191,17 +191,43 @@ La función de los comandos anteriores es:
 
 - `python plot_${TARGET}.py`→ Ejecuta el script de post-procesamiento que genera las gráficas de salida, permitiendo visualizar las señales y confirmar que el multiplicador responde correctamente a los estímulos definidos en el testbench.
 
-- ✅ Resultado esperado: Tras ejecutar estos comandos, se debe obtener la simulación completa del multiplicador de 32 bits, junto con las gráficas que muestran su comportamiento. Esto confirma que la descripción del módulo es correcta y que puede integrarse de manera confiable en el procesador Femto RISC-V, tal y como se muestra a continuación:
-- 
-... (En redacción, todavia) ....
-
----
+- Resultado esperado: Tras ejecutar estos comandos, se debe obtener la simulación completa del multiplicador de 32 bits, se genera un archivo .raw, el cual se podrá graficar con ayuda de un script de Python, con las gráficas que muestran su comportamiento. Esto confirma que la descripción del módulo es correcta y que puede integrarse de manera confiable en el procesador Femto RISC-V.
 
 ## 5️⃣ Simulación del Multiplicador de 32 bits en Ngspice
 
-... (En redacción, todavia) ....
+La simulación del multiplicador de 32 bits (`mult_32`) puede replicarse utilizando el **Makefile** con los siguientes parámetros y comandos:
 
+```makefile
+# Parámetros de simulación
+TARGET = mult_32
+TOP    = mult_32
+NPROC  = 4
+
+# Archivos fuente
+OBJS        = mult_32.v
+PER_OBJS    = perip_mult.v $(OBJS)
+SIM_OBJS    = cores/sim_spi_flash/spiflash.v
+SIM_OBJS_SKY = ../verilog_model/sky130_fd_sc_hd.v
+SIM_OBJS_SKY += ../verilog_model/primitives.v
+
+# Comandos de simulación
+ngspice ${TARGET}.spice
+python plot_${TARGET}.py
+
+Explicación
+- **`TARGET / TOP`**: definen el módulo principal a simular (mult_32).
+- **`OBJS / PER_OBJS`**: incluyen los archivos Verilog del multiplicador y periféricos asociados.
+- **`SIM_OBJS / SIM_OBJS_SKY`**: agregan modelos de simulación, incluyendo la memoria SPI Flash y librerías de celdas estándar Sky130.
+- **`ngspice`**: ejecuta la simulación del archivo .spice generado.
+- **`python plot_${TARGET}.py`**: procesa los resultados y genera gráficas de salida.
 ---
+
+Aunque Ngspice permite realizar la simulación, se optó por Xyce debido a las siguientes razones:
+
+- Paralelización nativa: Xyce ejecuta la simulación del archivo .spice en paralelo, aprovechando múltiples núcleos (NPROC=4), lo que reduce significativamente los tiempos de ejecución.
+- Eficiencia en módulos grandes: incluso en un módulo relativamente pequeño como mult_32, Ngspice tiende a consumir mucho tiempo de simulación y puede provocar sobrecalentamiento en máquinas locales.
+- Escalabilidad: para módulos más complejos como el procesador Femto RISC-V, la simulación con Ngspice se vuelve poco viable.
+- Uso de máquina remota: se optó por ejecutar Xyce en una máquina remota con mayor capacidad de cómputo, garantizando estabilidad y evitando problemas de rendimiento en el equipo local.
 
 ## 6️⃣ Extracción Magic
 
