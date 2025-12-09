@@ -77,6 +77,9 @@ gtkwave femto_tb.vcd
 - Incluir ejemplos de resultados esperados (gráficas, logs de simulación).
 - Este paso asegura confiabilidad y transparencia, permitiendo que el diseño sea validado por terceros y aumentando la probabilidad de éxito en la fabricación.
 
+## Estadísticas de Síntesis y Layout
+
+En esta sección se presentan las estadísticas generadas automáticamente por el flujo de TinyTapeout a partir del archivo GDS. Los resultados incluyen el **número de compuertas lógicas utilizadas**, el **porcentaje de utilización del ruteo** y el **largo total del cableado en micrómetros**. Estos datos se muestran en la siguiente imagen para ofrecer una visión clara del rendimiento y la complejidad física del diseño.
 
 ---
 
