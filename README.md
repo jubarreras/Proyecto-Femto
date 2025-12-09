@@ -47,6 +47,8 @@ El desarrollo y la implementación de un procesador requieren un conjunto de her
 - **TinyTapeout Build System**  
   Infraestructura de construcción y automatización para enviar diseños al flujo de fabricación de TinyTapeout. Permite integrar proyectos en el ecosistema colaborativo y generar los artefactos necesarios para tapeout.  
   [Repositorio oficial](https://github.com/TinyTapeout/tt-support-tools)
+  
+---
 
 ## 💡 Descripción de Hardware
 El procesador Femto RISC-V 32 se basa en una arquitectura modular inspirada en la familia FemtoRV. En esta sección se introduce la organización interna del núcleo, sus principales módulos y la forma en que interactúan para ejecutar el conjunto de instrucciones RV32I.  
@@ -60,6 +62,7 @@ El flujo de diseño digital requiere validar el comportamiento del procesador me
 Tiny Tapeout ofrece un entorno colaborativo para llevar diseños digitales a fabricación en silicio. En esta sección se explica cómo integrar el procesador Femto RISC-V 32 en el flujo de Tiny Tapeout, incluyendo restricciones, preparación de archivos y envío del diseño.  
 ✅[Ver más detalles en `docs/tinytapeout.md`](docs/tinytapeout.md)✅
 
+---
 
 ## Conclusiones
 
