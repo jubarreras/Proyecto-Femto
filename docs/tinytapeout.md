@@ -1,9 +1,9 @@
 ## Desarrollo del Repositorio para Fabricación en Tiny Tapeout
 
-## ✅ Resultado del Proyecto en Tiny Tapeout
+## ✅ Resultado del Proyecto en Tiny Tapeout ✅
 
 El resultado para este caso se puede ver en el siguiente enlace:  
-[Repositorio Tiny Tapeout – Femto RISC-V](AQUÍ_VA_TU_LINK)
+[Repositorio Tiny Tapeout – Femto RISC-V](https://github.com/jubarreras/femto_risc)
 
 El repositorio constituye la base del flujo de trabajo que permite llevar el diseño del procesador **Femto RISC-V** desde su descripción en Verilog hasta la fabricación física en un chip mediante **Tiny Tapeout**.  
 
@@ -71,6 +71,11 @@ vvp femto_tb
 gtkwave femto_tb.vcd
 
 ```
+
+## ✅ Resultado del Proyecto en Tiny Tapeout ✅
+
+El resultado para este caso se puede ver en el siguiente enlace:  
+[Repositorio Tiny Tapeout – Femto RISC-V](https://github.com/jubarreras/femto_risc)
 
 - Documentar paso a paso cómo simular el diseño, de manera que otros usuarios o los fabricantes puedan reproducir las pruebas fácilmente.
 - Incluir ejemplos de resultados esperados (gráficas, logs de simulación).
