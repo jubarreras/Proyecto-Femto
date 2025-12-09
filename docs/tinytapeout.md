@@ -3,7 +3,7 @@
 ## ✅ Resultado del Proyecto en Tiny Tapeout ✅
 
 El resultado para este caso se puede ver en el siguiente enlace:  
-[Repositorio Tiny Tapeout – Femto RISC-V](https://github.com/jubarreras/femto_risc)
+[Repositorio Tiny Tapeout – Femto RISC-V - jdbarrera](https://github.com/jubarreras/femto_risc)
 
 ---
 
@@ -73,13 +73,15 @@ vvp femto_tb
 gtkwave femto_tb.vcd
 
 ```
+- Documentar paso a paso cómo simular el diseño, de manera que otros usuarios o los fabricantes puedan reproducir las pruebas fácilmente.
+- Incluir ejemplos de resultados esperados (gráficas, logs de simulación).
+- Este paso asegura confiabilidad y transparencia, permitiendo que el diseño sea validado por terceros y aumentando la probabilidad de éxito en la fabricación.
+
+
 ---
+
 
 ## ✅ Resultado del Proyecto en Tiny Tapeout ✅
 
 El resultado para este caso se puede ver en el siguiente enlace:  
-[Repositorio Tiny Tapeout – Femto RISC-V](https://github.com/jubarreras/femto_risc)
-
-- Documentar paso a paso cómo simular el diseño, de manera que otros usuarios o los fabricantes puedan reproducir las pruebas fácilmente.
-- Incluir ejemplos de resultados esperados (gráficas, logs de simulación).
-- Este paso asegura confiabilidad y transparencia, permitiendo que el diseño sea validado por terceros y aumentando la probabilidad de éxito en la fabricación.
+[Repositorio Tiny Tapeout – Femto RISC-V - jdbarrera ](https://github.com/jubarreras/femto_risc)
