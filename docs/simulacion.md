@@ -192,3 +192,17 @@ La función de los comandos anteriores es:
 - `python plot_${TARGET}.py`→ Ejecuta el script de post-procesamiento que genera las gráficas de salida, permitiendo visualizar las señales y confirmar que el multiplicador responde correctamente a los estímulos definidos en el testbench.
 
 - ✅ Resultado esperado: Tras ejecutar estos comandos, se debe obtener la simulación completa del multiplicador de 32 bits, junto con las gráficas que muestran su comportamiento. Esto confirma que la descripción del módulo es correcta y que puede integrarse de manera confiable en el procesador Femto RISC-V, tal y como se muestra a continuación:
+
+
+---
+
+## 5️⃣ Simulación del Multiplicador de 32 bits en Ngspice
+
+
+---
+
+## 6️⃣ Extracción Magic
+
+---
+
+## Conclusiones
